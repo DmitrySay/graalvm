@@ -1,0 +1,3 @@
+-- CREATE DATABASE graalvm ENCODING 'UTF8';
+-- CREATE USER postgres WITH PASSWORD 'secret';
+-- GRANT ALL PRIVILEGES ON DATABASE graalvm TO postgres;

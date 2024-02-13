@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: graalvm-service
+  datasource:
+    url: jdbc:postgresql://graalvm_database:5432/graalvm
+    username: postgres
+    password: secret
+    driverClassName: org.postgresql.Driver

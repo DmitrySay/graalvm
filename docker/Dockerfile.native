@@ -1,0 +1,16 @@
+FROM vegardit/graalvm-maven:latest-java21 as builder
+
+WORKDIR /app
+
+COPY pom.xml /app/
+COPY src /app/src/
+
+RUN mvn -Pnative native:compile -DskipTests
+
+# The deployment Image
+FROM mirekphd/jenkins-jdk17-on-ubuntu2204:latest
+
+# executable file name used from pom tag <artifactId>graalvm</artifactId>
+COPY --from=builder /app/target/graalvm /app/
+
+CMD ["/app/graalvm"]
