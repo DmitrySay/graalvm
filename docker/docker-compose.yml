@@ -22,7 +22,7 @@ services:
     build:
       context: ../
       #     dockerfile: Dockerfile - так делали всегда
-      dockerfile: ./docker/Dockerfile.native # так собираем нативный образ
+      dockerfile: docker/Dockerfile.native # так собираем нативный образ
     ports:
       - '8080:8080'
     environment:
